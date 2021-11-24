@@ -10,11 +10,11 @@ import javax.persistence.Id;
 import java.util.Objects;
 
 @Entity
-@Data
-@NoArgsConstructor
+@NoArgsConstructor // Spring requires constructor with no argument. Lombok helps this with annotation.
+@Data // Spring requires setter, getter class. Lombok helps this with annotation.
 public class Vote {
 
-    @Id
+    @Id // For Springboot to scan @Entity, then it needs @Id for field.
     @GeneratedValue
     private long id;
     private int vote;

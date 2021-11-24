@@ -11,11 +11,11 @@ import javax.persistence.ManyToOne;
 import java.util.Objects;
 
 @Entity
-@Data
-@NoArgsConstructor
-public class Comment {
+@NoArgsConstructor // Spring requires constructor with no argument. Lombok helps this with annotation.
+@Data // Spring requires setter, getter class. Lombok helps this with annotation.
+public class Comment extends Auditable {
 
-    @Id
+    @Id // For Springboot to scan @Entity, then it needs @Id for field.
     @GeneratedValue
     private Long id;
     private String body;
