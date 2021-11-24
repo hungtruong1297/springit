@@ -15,6 +15,7 @@ import java.util.Objects;
 @Data // Spring requires setter, getter class. Lombok helps this with annotation.
 public class Comment extends Auditable {
 
+
     @Id // For Springboot to scan @Entity, then it needs @Id for field.
     @GeneratedValue
     private Long id;
